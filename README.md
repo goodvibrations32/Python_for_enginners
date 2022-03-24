@@ -1,2 +1,2 @@
-# Python_for_enginners-1st_set
+# Python_for_enginners
 This is a repository for third semester exercises 
