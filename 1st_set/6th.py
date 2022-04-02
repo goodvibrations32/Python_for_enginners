@@ -8,11 +8,13 @@ deck = [rank+''+suit for rank in ranks for suit in suits]
 ran_cards = random.sample(deck, k= 5)
 print('Number of cards before random pick =',len(deck))
 
+for item in ran_cards:
+    deck.remove(item)
 
-for i in range (len(ran_cards)):
-    deck.remove(ran_cards[i])
+#
+#for i in range (len(ran_cards)):
+#    deck.remove(ran_cards[i])
     
-print('Randomly selected cards from deck =',ran_cards) 
-print('Number of cards in deck after removing selected =',len(deck))
+print(f'Randomly selected cards from deck ={ran_cards}\n Number of cards in deck after removing selected ={len(deck)}') 
 
 # %%

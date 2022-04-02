@@ -1,6 +1,6 @@
-"""
-
-"""
+# password generator with chosen symbols from aveliable 
+# to meet the requirements
+# 
 
 #%%
 from ntpath import join
