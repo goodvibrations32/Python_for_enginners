@@ -28,8 +28,8 @@ print('x= ',evectors)
 
 #Print the eigenvectors for λ = evalues[i]
 
-for i in range (len(evalues)):
-    print ('The eigenvector of Table A for λ=',evalues[i], 'is x=',evectors[i])
+for i,j in zip(evalues, evectors) :
+    print ('The eigenvector of Table A for λ=',i, 'is x=',j)
 
 
 

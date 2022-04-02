@@ -8,17 +8,15 @@
 
 """
 #%%
-from re import I
-
 
 def lin_search_list(L, x):
     i=0
-    I=[]
+    SOME_LIST=[]
     while i < len(L) and i!= len(L):
         for e in L:
             if e==x:
-                I.append(i)
-                return i, I
+                SOME_LIST.append(i)
+                return i, SOME_LIST
             i += 1
         return None
     
@@ -33,14 +31,7 @@ print('The position of the number in the list is',lin_search_list(L, x))
 This approach search all the list and returnes the indexies 
 of the numbers that are equal to x 
 """
-i=0
-I=[]
-for i in range (0, len(L)):
-    if x == L[i]:
-        I.append(i)
-   
-i+=1
 
-
-print('The positions of x in the list L are',I)
+INDICIES = [i for i,y in enumerate(L) if y==x ]
+print(f'The positions of x in the list L are {INDICIES}')
 # %%

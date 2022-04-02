@@ -10,6 +10,6 @@ A = np.array([[3,1],[1,2]])
 B = np.array([[9],[8]])
 
 x = np.linalg.solve(A,B)
-print ('solution is x =', x[0], 'y =', x[1])
+print (f'solution is x = {x[0]}, y = {x[1]}')
 check_of_opp = np.dot(A, x)
 # %%
