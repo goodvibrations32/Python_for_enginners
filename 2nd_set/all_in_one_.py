@@ -92,7 +92,7 @@ x_times_y = np.cross(X, Y)
 
 #δ) ερώτημα
 
-vect_dot_product = (X, x_vect)
+vect_dot_product = np.dot(X, x_vect)
 
 # %%
 # Ασκηση 4
