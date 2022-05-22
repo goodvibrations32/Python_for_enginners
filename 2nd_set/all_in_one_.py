@@ -1,10 +1,11 @@
 #%%
-# Ασκηση 1
+# Libraries for operations
 import matplotlib.pyplot as plt
-
 import numpy as np
 
 # %%
+# Ασκηση 1
+
 x1 = 2
 x2 = x1+1
 x3 = x1
@@ -34,13 +35,15 @@ plt.plot((x[0],x[2]), (y[0],y[2]),linestyle='--')
 plt.plot((x[1],x[3]), (y[1],y[3]),linestyle='--')
 
 #by definition in rightangle parallelogram the half length of the
-#diagonal is in fact the midle point 
+#diagonal is in fact the crossing point of the 2 diagonals 
 X0 = (x[0]+x[2])/2
 Y0 = (y[0]+y[2])/2
 plt.plot(X0,Y0 ,marker='o',c='r', label='crossing point')
 center = [X0,Y0]
 #The surface in squear meters is calculated
 #from the equation : A = b*h, where b= base and h= hight
+
+print('Αριθμός μητρόου: ΤΜ = 6220')
 
 #diagonal_of_polygon = ((x[0]+x[2])/2) * ((y[0]+y[2])/2)
 base = x[1]-x[0]
@@ -56,14 +59,13 @@ print(f'The surface area in square meters is equal to A={base*hight} m^2 \n The 
 
 # %%
 # Ασκηση 2
-# READY AS HELL 
 
 A = np.array([[1,2],[1.5,-1]])
 B = np.array([[0],[0.5]])
 
 x= np.dot(np.linalg.inv(A), B)
 
-print (f'The result is \n x = \n {x}')
+print (f'a)\n The result is \n x = \n {x}')
 
 C = np.array([[11,3,0,1,2], [0,4,2,0,1], [3,2,7,1,0], [4,0,4,10,1], [2,5,1,3,14]])
 D = np.array([[45],[30],[15],[20],[92]])
@@ -71,7 +73,7 @@ D = np.array([[45],[30],[15],[20],[92]])
 y= np.dot(np.linalg.inv(C),D)
 
 variable_mtrx =[].append(y)
-print (f'The result is \n x = \n {y}')
+print (f'b)\n The result is \n x = \n {y}')
 
 #%%
 #Ασκηση 3
@@ -82,24 +84,36 @@ Y = np.array([[-0.1,-0.2,-0.3],[3,10,2],[4,2,0.5]])
 x_vect = np.array([[1],[3],[4]])
 
 #β) ερωτημα
-
-dot_product = np.dot(X, Y) 
+print(f'b)\n The dot product of A, B matricies is: \n{np.dot(X, Y)}')
 
 #γ) ερωτημα
-
-x_times_y = np.cross(X, Y)
+print(f'c)\n The cross product of A, B matricies is: \n{np.cross(X,Y)}')
 
 #δ) ερώτημα
-
-vect_dot_product = np.dot(X, x_vect)
+print(f'd)\n The dot product of matrix A, x vector is: \n{np.dot(X, x_vect)}')
 
 #ε) ερωτημα
-some_var = np.dot(np.linalg.inv(X), Y)
+print(f'e)\n The dot product of A^(-1), B matricies is: \n{np.dot(np.linalg.inv(X), Y)}')
 
-
+L =  [21, 1, 26, 45, 29, 28, 2, 9, 16, 49, 39, 27,43, 
+34, 46, 40]
 
 # %% [markdown]
-# Ασκηση 4
+# Ασκηση 4 
+# ## Λύση Ερωτήματος 1
+#  - Λόγω της λειτουργείας του αλγόριθμου merge_sort
+#   η λίστα θα χωριστεί αρχικά στην μέση δηλαδή σε 2 λιστες με ισο ποσό μεταβλητών ([21, 1, 26, 45, 29, 28, 2, 9],[16, 49, 39, 27,43, 34, 46, 40]).
+#   Στην συνέχεια η 1η αναδρομική κλήση του αλγόριθμου θα κληθεί να χωρίσει εκ' νέου μία λίστα στην μέση, επομένως θα χωρίσει την πρώτη από τις 2 αρχικές([21, 1, 26, 45],[29, 28, 2, 9]).
+#   Έπειτα η 2η φορά που καλείται αναδρομικά ο αλγόριθμος, επιλέγεται πάλι η πρωτη λίστα και θα χωριστεί ώς εξής: [21,1], [26,45].
+#   Τέλος την 3η φορά οι λίστες που θα ενωθούν στο τέλος της merge_sort από την merge θα είναι οι λίστες: [21],[1].
+#   Αρα η απάντηση ειναι οτι θα εμφανιστεί η λίστα [21,1] (β) και μετά την ταξινόμηση το αποτέλεσμα θα είναι [1,21].
+# 
+# ## Λύση Ερωτήματος 2
+#   - Εφόσον η λίστα χωρίζεται στη μέση και έπειτα ταξινομούνται τα στοιχεία σε αύξουσα σειρά, η πρώτες 2 λίστες που θα συγχωνεύτουν θα είναι: [1, 2, 9, 21, 26, 28, 29, 45] και [16, 27, 34, 39, 40, 43, 46, 49].
+#   Άρα η απάντηση είναι η (**2**)
+# 
+# ### Αλγόριθμος merge_sort() και merge() (σημειώσεις μαθήματος).
+# 
 # ## Merge algorithm 
 #```
 #  
@@ -124,32 +138,16 @@ some_var = np.dot(np.linalg.inv(X), Y)
 #
 #  ## Merge short algorithm
 # ```
-# def merge_sort(repeat, L, left, right):
-#     if repeat == 3:
-#         return L
-#     
-#     else:
-#     
-#         if left < right:
+# def merge_sort(L, left, right):
+#       if left < right:
 # 
-#             middle = (left + right) // 2
-#             merge_sort(repeat,L, left, middle)
-#             merge_sort(repeat, L, middle + 1, right)
-#             merge( L, left, middle, right)
-#             repeat+=1
+#           middle = (left + right) // 2
+#           merge_sort(repeat,L, left, middle)
+#           merge_sort(repeat, L, middle + 1, right)
+#           merge( L, left, middle, right)
 # 
 #  ```  
 # 
 # 
 
 #%%
-re_opt=0
-
-The_list =  [21, 1, 26, 45, 29, 28, 2, 9, 16, 49, 39, 27,43, 
-34, 46, 40]
-
-copy_ = The_list.copy()
-
-#merge_sort(re_opt, The_list, 0, len(The_list) - 1)
-
-# %%
