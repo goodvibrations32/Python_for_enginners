@@ -21,3 +21,11 @@ x = pathlib.Path ('feature')
 y ='next folder'
 next_path = f'{x}/{y}' 
 # %%
+
+a = {
+    'jon kati' : ['2106718664', 45, 'what thefuck']
+}
+# %%
+
+a.get('jon')
+# %%
